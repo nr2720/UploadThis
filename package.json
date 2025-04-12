@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "prisma generate && npm run build-app",
+    "build": "npx prisma generate && npm run build-app",
     "start": "node ./bin/www"
   },
   "dependencies": {
