@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Uploader</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <!-- Logo / Heading -->
+      <header>
+        <h1>Bienvenue <%= user.username %> !</h1><br>
+        <h2>Ton dossier se nomme <%= folder.folder_name %> !</h2>
+        <p>Entrepose des fichiers à l'intérieur ! Max de 5 fichiers</p>
+        <a href="/auth">Back</a>
+      </header>
+
+      <section class="upload">
+        <h2>Save un nouveau fichier: </h2>
+        <form action="/files/upload" method="POST" enctype="multipart/form-data">
+            <label for="file">File</label>
+            <input id="file" name="file" type="file" />
+            <input type="hidden" name="folderId" value="<%= folder.id %>">
+            <input type="submit" name="Upload" id="upload">
+            </form>
+      </section>
+      <br>
+      <section class="files">
+        <% if(files.length > 0){ %>
+            <h2>Tes fichiers: </h2>
+            <div class="files-container">
+              <% files.forEach(file => { %>  <!-- Loop through each file -->
+                <div class="file-card">
+                  <a href='<%= file.cloud_url%>' download><%= file.file_name %></a>
+                  <form action="/files?_method=DELETE" method="POST">
+                    <input type="hidden" name="file_id" value="<%= file.id %>">
+                    <input type="hidden" name="folder_id" value="<%= folder.id %>">
+                    <input type="submit" name="Delete" id="delete" value="Delete">
+                  </form>
+                  <br>
+                </div>
+            <% }) %> 
+          </div>
+          <% } else{ %>  
+            <h2>Tu n'as pas encore de fichier. Sauvegarde en un ! 🚀</h2>
+         <% } %>
+      </section>
+
+    </div>
+  </div>
+</body>

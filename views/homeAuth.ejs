@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Uploader</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <!-- Logo / Heading -->
+      <header>
+        <h1>Wassup <%= user.username %> !</h1><br>
+        <p>Tu peux entreposer des fichers ici, dans des dossiers! Enjoy!</p>
+        <a href="/user/log-out">Log Out</a>
+      </header>
+
+      <section class="upload">
+        <h2>Creer un nouveau dossier: </h2>
+        <form action="/folders" method="POST">
+            <label for="name">Nom du dossier</label>
+            <input type="text" name="name" id="name" required>
+            <input type="submit" name="Upload" id="upload">
+          </form>
+      </section>
+      <br>
+      <section class="files">
+        <% if(folders.length > 0){ %>
+            <h2>Tes dossiers: </h2>
+            <% folders.forEach(folder => { %>  
+              <div class="file-card">
+              <tr>
+                <a href="/folders/<%=folder.id%>"><%= folder.folder_name %></a>
+              </tr>
+              <br><br>
+              <form action="/folders?_method=DELETE" method="POST">
+                <input type="hidden" name="folder_id" value="<%= folder.id %>">
+                <input type="submit" name="Delete" id="delete" value="Delete">
+              </form>
+            </div>
+            <% }) %> 
+          <% } else{ %>  
+            <h2>Tu n'as pas encore de dossier. Essaye d'en creer un ! 🚀</h2>
+         <% } %>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #f0f4f8, #d9e2ec);
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #2b6cb0;
+  font-size: 2.5rem;
+}
+
+header h2 {
+  color: #4a5568;
+  margin-top: 10px;
+}
+
+header p {
+  color: #718096;
+  margin: 10px 0;
+}
+
+header a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #2b6cb0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+/* Upload section */
+.upload {
+  background-color: #edf2f7;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.upload h2 {
+  color: #2c5282;
+  margin-bottom: 15px;
+}
+
+.upload label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.upload input[type="file"] {
+  display: block;
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+}
+
+.upload input[type="submit"] {
+  background-color: #2b6cb0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.upload input[type="submit"]:hover {
+  background-color: #2c5282;
+}
+
+/* Files display */
+.files h2 {
+  margin-bottom: 20px;
+  color: #2d3748;
+}
+
+.files-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.file-card {
+  padding: 15px;
+  background-color: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.file-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.file-card a {
+  color: #2b6cb0;
+  text-decoration: none;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.file-card a:hover {
+  text-decoration: underline;
+}
+
+/* Auth Section */
+.auth-section {
+  text-align: center;
+}
+
+.auth-section h2 {
+  color: #2c5282;
+  margin-bottom: 20px;
+}
+
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.auth-btn {
+  padding: 10px 20px;
+  background-color: #e2e8f0;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+  background-color: #cbd5e0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-form form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-form input {
+  padding: 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.auth-form button {
+  padding: 12px;
+  background-color: #2b6cb0;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.auth-form button:hover {
+  background-color: #2c5282;
+}
+
+/* Error Styling */
+.error {
+  color: #e53e3e;
+  background-color: #fff5f5;
+  padding: 10px;
+  border: 1px solid #feb2b2;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
