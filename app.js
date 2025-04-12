@@ -25,7 +25,7 @@ const filesRouter = require('./routes/files');
 const foldersRouter = require('./routes/folders');
 
 //session
-app.use(session({ secret: "cats", resave: false, saveUninitialized: false }));
+app.use(session({ secret: process.env.SESSION_KEY, resave: false, saveUninitialized: false }));
 app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
